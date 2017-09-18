@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>react yo</title>
+        <script crossorigin src="https://unpkg.com/react@15/dist/react.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@15/dist/react-dom.js"></script>        <script src ="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.js">
+https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.js
+        </script>
+    </head>
+    <header>
+        <h1> React baby!</h1>
+        <h3> Check check with browser</h3>
+    </header>
+    <body>
+      <div id="container">
+
+      </div>
+        <script type="text/babel">
+
+        let container = document.querySelector("#container");
+
+        let Square = React.createClass({
+
+            render:function(){
+
+                let squareStyle = {
+                    backgroundColor:this.props.color,
+                    height:150
+                }
+
+                return (
+                <div style = {squareStyle}></div>
+            )
+            }
+        });
+
+        let Label = React.createClass({
+            render:function(){
+                return (
+                    <p> {this.props.color} </p>
+                )
+            }
+        });
+
+        let Card = React.createClass({
+            render:function(){
+                let CardStyle = {
+                    backgroundColor: "yellow",
+                    width:200,
+                    height:200
+                };
+                return (
+                  <div style = {CardStyle}>
+                  <Square color = {this.props.color}/>
+                  <Label color = {this.props.color }/>
+                  </div>
+                )
+            }
+        });
+
+ReactDOM.render(
+    <Card color = "orange"/>,
+    container
+);
+        </script>
+    </body>
+    </html>
